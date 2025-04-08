@@ -9,16 +9,16 @@ let reset = document.querySelector("#reset");
 
 //Reset button
 const resetButton = () => {
-    randomNumber = Math.floor(Math.random() * 10) + 1;
     guess.value = "";
-    message.textContent = ""
+    message.textContent = "";
+    attempts = 0;
 }
 reset.addEventListener("click", resetButton);
 
 //Game logic
 let attempts = 0;
 const checkGuess = () =>{
-    let randomNumber = Math.floor(Math.random() * 10) + 1;
+    let randomNumber = Math.floor(Math.random() * 5) + 1;
     attempts++;
     console.log(`Random Number: ${randomNumber}`);
     console.log(`Attempts: ${attempts}`);
