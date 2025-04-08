@@ -8,14 +8,16 @@ let reset = document.querySelector("#reset");
 
 
 //Reset button
-reset.addEventListener("click", function () {
+const resetButton = () => {
     randomNumber = Math.floor(Math.random() * 10) + 1;
     guess.value = "";
-    message.textContent = "";
-});
+    message.textContent = ""
+}
+reset.addEventListener("click", resetButton);
 
+//Game logic
 let attempts = 0;
-submit.addEventListener("click", function () {
+const checkGuess = () =>{
     let randomNumber = Math.floor(Math.random() * 10) + 1;
     attempts++;
     console.log(`Random Number: ${randomNumber}`);
@@ -32,4 +34,6 @@ submit.addEventListener("click", function () {
     } else {
         message.textContent = "👆Too high! Try again.";
     }
-});
+}
+
+submit.addEventListener("click", checkGuess);
